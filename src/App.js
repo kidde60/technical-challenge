@@ -13,11 +13,11 @@ function App() {
     <div>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/books/:id" element={<BookDetails />} />
         <Route path="/book" element={<AddBook />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Register />} />
+        <Route path="/" element={<Register />} />
       </Routes>
       <Footer />
     </div>
