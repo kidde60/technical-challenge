@@ -6,7 +6,8 @@ import Button from "react-bootstrap/Button";
 // import BookCard from "./BookCard";
 const BookList = () => {
   const books = useSelector(getAllBooks);
-  console.log(books);
+  // console.log(books);
+
   // let renderBooks = "";
   // renderBooks =
   // books.length !== 0 ? (
@@ -38,21 +39,25 @@ const BookList = () => {
   // );
   // console.log(renderBooks);
   return (
-    <div>
+    <>
       <h1>Books</h1>
-      {/* <div>
-        {books.map((book) => {
-          <div key={book.title}>
-            <h1>{book.title}</h1>
-          </div>;
-        })}
-      </div> */}
+      {(() => {
+        if (books !== undefined) {
+          <h1>array present</h1>;
+          // books.map((book, index) => {
+          //   console.log(book.title);
+          //   return <h1>book.title</h1>;
+          // });
+        } else {
+          console.log("......loading");
+        }
+      })()}
       <p>hgfgdffjghgk</p>
 
       <Button className="bg-primary color-danger" size="lg" active>
         Button
       </Button>
-    </div>
+    </>
   );
 };
 
