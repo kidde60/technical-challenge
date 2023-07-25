@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { getAllBooks } from "../Features/BookSlice";
-import Button from "react-bootstrap/Button";
+import { Link } from "react-router-dom";
 
 // import BookCard from "./BookCard";
 const BookList = () => {
@@ -53,10 +53,14 @@ const BookList = () => {
         }
       })()}
       <p>hgfgdffjghgk</p>
-
-      <Button className="bg-primary color-danger" size="lg" active>
-        Button
-      </Button>
+      <Link to={"/book"} className="text-blue-600">
+        <button
+          type="button"
+          className="bg-[#61affe] px-4 py-2 rounded-full max-w-max"
+        >
+          Add Book
+        </button>
+      </Link>
     </>
   );
 };
