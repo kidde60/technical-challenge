@@ -1,12 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Register = () => {
+  const navigate = useNavigate();
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
+
     if (validate) {
       const options = {
         userName: userName,
@@ -16,6 +18,15 @@ const Register = () => {
         .post("https://bookstore.toolsqa.com/Account/v1/User", options)
         .then((res) => {
           console.log(res.data);
+          // Create an object with the signup details
+          const userDetails = {
+            userID: res.data.userID,
+            username: res.data.username,
+          };
+
+          // Save the signup details to localStorage
+          localStorage.setItem("signupDetails", JSON.stringify(userDetails));
+          navigate("/login");
         })
         .catch((error) => console.log(error));
       console.log("success");
