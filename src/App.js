@@ -8,6 +8,9 @@ import { Footer } from "./components/Footer/Footer";
 import Login from "./components/User/Login";
 import Register from "./components/User/Register";
 import FindBook from "./components/FindBook/FindBook";
+import DeleteBook from "./components/DeleteBook/DeleteBook";
+import DeleteBooks from "./components/DeleteBook/DeleteBooks";
+import UpdateBook from "./components/UpdateBook/UpdateBook";
 
 function App() {
   return (
@@ -18,6 +21,9 @@ function App() {
         <Route path="/books/:id" element={<BookDetails />} />
         <Route path="/book" element={<AddBook />} />
         <Route path="/find" element={<FindBook />} />
+        <Route path="/delete" element={<DeleteBook />} />
+        <Route path="/deleteAll" element={<DeleteBooks />} />
+        <Route path="/update" element={<UpdateBook />} />
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Register />} />
       </Routes>
