@@ -2,7 +2,8 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addBooks } from "../../Features/BookSlice";
-import BookList from "../../BookList/BookList";
+
+import BookCard from "../../BookList/BookCard";
 
 export const Home = () => {
   // const url = 'https://bookstore.toolsqa.com/BookStore/v1/Books';
@@ -22,7 +23,7 @@ export const Home = () => {
 
   return (
     <div>
-      <BookList />
+      <BookCard />
     </div>
   );
 };
