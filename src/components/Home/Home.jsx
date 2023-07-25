@@ -3,7 +3,7 @@ import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addBooks } from "../../Features/BookSlice";
 
-import BookCard from "../../BookList/BookCard";
+import BookCard from "../BookList/BookCard";
 
 export const Home = () => {
   // const url = 'https://bookstore.toolsqa.com/BookStore/v1/Books';
