@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/technical-challenge/static/css/main.adc295a2.css",
+    "main.js": "/technical-challenge/static/js/main.30947fa6.js",
+    "index.html": "/technical-challenge/index.html",
+    "main.adc295a2.css.map": "/technical-challenge/static/css/main.adc295a2.css.map",
+    "main.30947fa6.js.map": "/technical-challenge/static/js/main.30947fa6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.adc295a2.css",
+    "static/js/main.30947fa6.js"
+  ]
+}
