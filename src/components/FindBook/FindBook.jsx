@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
@@ -7,10 +7,6 @@ function FindBook() {
   const [dataObject, setDataObject] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  //   useEffect(() => {
-  //     findBook();
-  //   }, []);
-  // console.log(userID);
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validate) {
@@ -44,7 +40,7 @@ function FindBook() {
   };
 
   return (
-    <div className="form">
+    <div className="form container mx-8">
       <form
         onSubmit={handleSubmit}
         className="container m-8 gap-4 flex flex-col  p-10"
@@ -72,7 +68,7 @@ function FindBook() {
         </div>
       </form>
 
-      <div className=" container bg-[#e5e7eb] py-2 px-4 my-3 text-base border-solid border-2 border-gray-400">
+      <div className=" container bg-[#e5e7eb] py-2 px-4 my-8 text-base border-solid border-2 border-gray-400">
         <h1>Title: {dataObject.title}</h1>
         <h1>Isbn: {dataObject.isbn}</h1>
         <h2>SubTitle: {dataObject.subTitle}</h2>
