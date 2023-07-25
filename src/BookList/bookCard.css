@@ -1,0 +1,11 @@
+.cardcontainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+.cardcontainer h1{
+    font-size: 45px;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+}
