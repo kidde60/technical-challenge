@@ -24,7 +24,7 @@ const Login = () => {
     const response = await axios.post(url, options).catch((err) => {
       console.log("Error :", err);
     });
-    console.log(response);
+    // console.log(response);
     if (response.data.status === "Success") {
       login();
       navigate("/home");
