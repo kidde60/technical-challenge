@@ -15,7 +15,6 @@ import UpdateBook from "./components/UpdateBook/UpdateBook";
 function App() {
   return (
     <div>
-      <Navbar />
       <Routes>
         <Route path="/home" element={<Home />} />
         <Route path="/books/:id" element={<BookDetails />} />
@@ -27,7 +26,6 @@ function App() {
         <Route path="/signup" element={<Register />} />
         <Route path="/" element={<Login />} />
       </Routes>
-      <Footer />
     </div>
   );
 }
