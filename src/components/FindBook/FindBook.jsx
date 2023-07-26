@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import Navbar from "../Navbar/Navbar";
+import { Link } from "react-router-dom";
 
 function FindBook() {
   const [isbn, setIsbn] = useState("");
@@ -44,7 +45,7 @@ function FindBook() {
       <Navbar />
       <form
         onSubmit={handleSubmit}
-        className="space-y-3 p-6 h-screen bg-gray-100 mx-40"
+        className="flex flex-col items-center my-8 space-y-3 p-6 h-screen bg-gray-100 mx-40"
       >
         <div className="flex">
           <input
@@ -53,7 +54,7 @@ function FindBook() {
             value={isbn}
             placeholder="isbn Number"
             required
-            className="block w-3/4 px-3 mx-10 border rounded-lg"
+            className="block w-full px-3 mx-2 border rounded-lg"
           />
 
           <div className="text-center">
@@ -66,16 +67,66 @@ function FindBook() {
             </button>
           </div>
         </div>
-        <div className=" container bg-[#e5e7eb] py-2 px-4 my-8 text-base border-solid border-2 border-gray-400">
-          <h1>Title: {dataObject.title}</h1>
-          <h1>Isbn: {dataObject.isbn}</h1>
-          <h2>SubTitle: {dataObject.subTitle}</h2>
-          <h3>Author: {dataObject.author}</h3>
-          <h4>Published_date: {dataObject.publish_date}</h4>
-          <h3>Publisher: {dataObject.publisher}</h3>
-          <h3>Date: {dataObject.pages}</h3>
-          <p>Description: {dataObject.description}</p>
-          <p>Website: {dataObject.website}</p>
+        <div className="flex w-2/4 flex-col my-8 bg-gray-100">
+          <div className="bg-gray-50 items-center m-3 p-10 rounded-lg shadow-xl transform transition-all  max-w-3/4 hover:scale-105">
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-red-600 mr-2">TITLE:</h1>
+              <h1 className="text-2xl font-semibold text-red">
+                {dataObject.title}
+              </h1>
+            </div>
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-red-600 mr-2">ISBN:</h1>
+              <h1 className="text-xl font-semibold text-gray-800">
+                {dataObject.isbn}
+              </h1>
+            </div>
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-red-600 mr-2">
+                SUBTITLE:
+              </h1>
+              <h1 className="text-2xl font-semibold text-gray-800">
+                {dataObject.subTitle}
+              </h1>
+            </div>
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-red-600 mr-2">AUTHOR:</h1>
+              <h1 className="text-2xl font-semibold text-gray-800">
+                {dataObject.author}
+              </h1>
+            </div>
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-red-600 mr-2">
+                PUBLISHED DATE:
+              </h1>
+              <h1 className="text-2xl font-semibold text-gray-800">
+                {dataObject.publish_date}
+              </h1>
+            </div>
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-red-600 mr-2">
+                PUBLISHER:
+              </h1>
+              <h1 className="text-2xl font-semibold text-gray-800">
+                {dataObject.publisher}
+              </h1>
+            </div>
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-red-600 mr-2">PAGES:</h1>
+              <h1 className="text-2xl font-semibold text-gray-800">
+                {dataObject.pages}
+              </h1>
+            </div>
+            <div className="flex items-center">
+              <p className="text text-gray-800">{dataObject.description}</p>
+            </div>
+            <div className="flex items-center">
+              <h1 className="text-2xl font-bold text-red-600 mr-2">WEBSITE:</h1>
+              <Link className="text-sm font-semibold text-blue-500">
+                {dataObject.website}
+              </Link>
+            </div>
+          </div>
         </div>
       </form>
     </div>
