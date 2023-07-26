@@ -24,8 +24,8 @@ function App() {
         <Route path="/delete" element={<DeleteBook />} />
         <Route path="/deleteAll" element={<DeleteBooks />} />
         <Route path="/update" element={<UpdateBook />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Register />} />
+        <Route path="/signup" element={<Register />} />
+        <Route path="/" element={<Login />} />
       </Routes>
       <Footer />
     </div>
