@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 const DeleteBooks = () => {
   const [userID, setUserID] = useState("");
@@ -49,30 +49,30 @@ const DeleteBooks = () => {
 
   return (
     <div className="form">
+      <Navbar />
       <form
         onSubmit={handleSubmit}
-        className="container m-8 gap-4 flex flex-col  p-10"
+        className="space-y-3 p-6 h-screen bg-gray-100 mx-40"
       >
-        <input
-          type="text"
-          onChange={(e) => setUserID(e.target.value)}
-          value={userID}
-          placeholder="User ID"
-          className="bg-[#e5e7eb] py-2 px-4 text-base border-solid border-2 border-gray-400"
-        />
+        <div className="flex">
+          <input
+            type="text"
+            onChange={(e) => setUserID(e.target.value)}
+            value={userID}
+            placeholder="User ID"
+            required
+            className="block w-3/4 px-3 mx-10 border rounded-lg"
+          />
 
-        <div className="flex gap-20 mx-4">
-          <button
-            type="submit"
-            className="bg-[#49cc90] px-4 py-2 rounded-full max-w-max"
-            onSubmit={handleSubmit}
-          >
-            Add Book
-          </button>
-
-          <Link to={"/home"} className="text-blue-500">
-            Book List
-          </Link>
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-800"
+              onSubmit={handleSubmit}
+            >
+              Delete All Books
+            </button>
+          </div>
         </div>
       </form>
       {message && <p>{message}</p>}
