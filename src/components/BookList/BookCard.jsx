@@ -47,21 +47,73 @@ const BookCard = () => {
             </button>
           </Link>
         </div>
-        <div className="container gap-8">
+        <div className="flex w-2/4 flex-col my-8 bg-gray-100">
           {dataArray.books.map((data) => (
             <div
               key={data.id}
-              className=" container bg-[#e5e7eb] py-2 px-4 my-3 text-base border-solid border-2 border-gray-400"
+              className="bg-gray-50 items-center m-3 p-10 rounded-lg shadow-xl transform transition-all  max-w-3/4 hover:scale-105"
             >
-              <h1>Title: {data.title}</h1>
-              <h1>Isbn: {data.isbn}</h1>
-              <h2>SubTitle: {data.subTitle}</h2>
-              <h3>Author: {data.author}</h3>
-              <h4>Published_date: {data.publish_date}</h4>
-              <h3>Publisher: {data.publisher}</h3>
-              <h3>Date: {data.pages}</h3>
-              <p>Description: {data.description}</p>
-              <p>Website: {data.website}</p>
+              <div className="flex items-center">
+                <h1 className="text-2xl font-bold text-red-600 mr-2">TITLE:</h1>
+                <h1 className="text-2xl font-semibold text-red">
+                  {data.title}
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-2xl font-bold text-red-600 mr-2">ISBN:</h1>
+                <h1 className="text-xl font-semibold text-gray-800">
+                  {data.isbn}
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-2xl font-bold text-red-600 mr-2">
+                  SUBTITLE:
+                </h1>
+                <h1 className="text-2xl font-semibold text-gray-800">
+                  {data.subTitle}
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-2xl font-bold text-red-600 mr-2">
+                  AUTHOR:
+                </h1>
+                <h1 className="text-2xl font-semibold text-gray-800">
+                  {data.author}
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-2xl font-bold text-red-600 mr-2">
+                  PUBLISHED DATE:
+                </h1>
+                <h1 className="text-2xl font-semibold text-gray-800">
+                  {data.publish_date}
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-2xl font-bold text-red-600 mr-2">
+                  PUBLISHER:
+                </h1>
+                <h1 className="text-2xl font-semibold text-gray-800">
+                  {data.publisher}
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-2xl font-bold text-red-600 mr-2">PAGES:</h1>
+                <h1 className="text-2xl font-semibold text-gray-800">
+                  {data.pages}
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <p className="text text-gray-800">{data.description}</p>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-2xl font-bold text-red-600 mr-2">
+                  WEBSITE:
+                </h1>
+                <Link className="text-sm font-semibold text-blue-500">
+                  {data.website}
+                </Link>
+              </div>
             </div>
           ))}
         </div>
