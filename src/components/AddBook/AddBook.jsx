@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar/Navbar";
 
 export const AddBook = () => {
   const [userData, setUserData] = useState(null);
@@ -58,31 +59,31 @@ export const AddBook = () => {
   };
 
   return (
-    <div className="form">
+    <div>
+      <Navbar />
       <form
         onSubmit={handleSubmit}
-        className="container m-8 gap-4 flex flex-col  p-10"
+        className="space-y-3 p-6 h-screen bg-gray-100 mx-40"
       >
-        <input
-          type="text"
-          onChange={(e) => setIsbn(e.target.value)}
-          value={isbn}
-          placeholder="isbn Number"
-          className="bg-[#e5e7eb] py-2 px-4 text-base border-solid border-2 border-gray-400"
-        />
+        <div className="flex">
+          <input
+            type="text"
+            onChange={(e) => setIsbn(e.target.value)}
+            value={isbn}
+            placeholder="isbn Number"
+            required
+            className="block w-3/4 px-3 mx-10 border rounded-lg"
+          />
 
-        <div className="flex gap-20 mx-4">
-          <button
-            type="submit"
-            className="bg-[#49cc90] px-4 py-2 rounded-full max-w-max"
-            onSubmit={handleSubmit}
-          >
-            Add Book
-          </button>
-
-          <Link to={"/home"} className="text-blue-500">
-            Book List
-          </Link>
+          <div className="text-center">
+            <button
+              type="submit"
+              className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-800"
+              onSubmit={handleSubmit}
+            >
+              Add Book
+            </button>
+          </div>
         </div>
       </form>
     </div>
