@@ -23,7 +23,7 @@ const Navbar = () => {
     <>
       <header className="flex justify-between header-mb p-6 md:px-24 w-full shadow-lg min-h-24 bg-white">
         <nav className="flex gap-10 flex-col md:flex-row">
-          <NavLink to="/">
+          <NavLink to="/home">
             <h1 className="app-color-primary h-full flex  items-center text-3xl font-bold  mr-2">
               Book List
             </h1>
