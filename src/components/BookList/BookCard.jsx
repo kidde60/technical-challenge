@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./bookCard.css";
+import Navbar from "../Navbar/Navbar";
+
 const BookCard = () => {
   const [dataArray, setDataArray] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
