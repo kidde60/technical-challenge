@@ -55,37 +55,54 @@ const Login = () => {
 
   return (
     <div>
-      <form
-        onSubmit={handleSubmit}
-        className="container m-8 gap-4 flex flex-col  p-10"
-      >
-        <input
-          type="text"
-          onChange={(e) => setUserName(e.target.value)}
-          value={userName}
-          placeholder="User Name"
-          className="bg-[#e5e7eb] py-2 px-4 my-3 text-base border-solid border-2 border-gray-400"
-        />
-        <input
-          type="password"
-          onChange={(e) => setPassword(e.target.value)}
-          value={password}
-          placeholder="Password"
-          className="bg-[#e5e7eb] py-2 px-4 text-base border-solid border-2 border-gray-400"
-        />
-        <div className="flex gap-20 mx-4">
-          <button
-            type="submit"
-            onSubmit={handleSubmit}
-            className="bg-[#61affe] px-4 py-2 rounded-full max-w-max"
-          >
-            Login
-          </button>
-          <Link to={"/"} className="text-blue-500">
-            Register
-          </Link>
+      <>
+        <div className="flex justify-center items-center h-screen bg-gray-100">
+          <div className="bg-white p-10 rounded-lg shadow-xl transform transition-all w-2/3 max-w-md hover:scale-105">
+            <h1 className="text-2xl font-bold mb-8 text-center">Login</h1>
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div>
+                <input
+                  type="text"
+                  onChange={(e) => setUserName(e.target.value)}
+                  value={userName}
+                  placeholder="User Name"
+                  className="block w-full p-2 border rounded-lg"
+                  required
+                />
+              </div>
+              <div>
+                <input
+                  type="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  value={password}
+                  placeholder="Password"
+                  className="block w-full p-2 border rounded-lg"
+                  required
+                />
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  onSubmit={handleSubmit}
+                  className="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+            <hr className="my-6 border-gray-300 w-full" />
+            <div className="text-center">
+              <Link
+                to="/signup"
+                className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
+              >
+                Register
+              </Link>
+            </div>
+          </div>
         </div>
-      </form>
+      </>
     </div>
   );
 };
