@@ -31,37 +31,40 @@ const BookCard = () => {
   console.log(dataArray.books);
   // Step 4: Render the data once it's available
   return (
-    <div className="mx-8">
-      <div className="cardcontainer">
-        <h1>BOOK LIST</h1>
-        <Link to={"/book"} className="text-blue-600">
-          <button
-            type="button"
-            className="button bg-[#61affe] px-4 py-2 rounded-full max-w-max"
-          >
-            Add Book
-          </button>
-        </Link>
+    <>
+      <Navbar />
+      <div className="mx-8">
+        <div className="cardcontainer">
+          <h1>BOOK LIST</h1>
+          <Link to={"/book"} className="text-blue-600">
+            <button
+              type="button"
+              className="button bg-[#61affe] px-4 py-2 rounded-full max-w-max"
+            >
+              Add Book
+            </button>
+          </Link>
+        </div>
+        <div className="container gap-8">
+          {dataArray.books.map((data) => (
+            <div
+              key={data.id}
+              className=" container bg-[#e5e7eb] py-2 px-4 my-3 text-base border-solid border-2 border-gray-400"
+            >
+              <h1>Title: {data.title}</h1>
+              <h1>Isbn: {data.isbn}</h1>
+              <h2>SubTitle: {data.subTitle}</h2>
+              <h3>Author: {data.author}</h3>
+              <h4>Published_date: {data.publish_date}</h4>
+              <h3>Publisher: {data.publisher}</h3>
+              <h3>Date: {data.pages}</h3>
+              <p>Description: {data.description}</p>
+              <p>Website: {data.website}</p>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="container gap-8">
-        {dataArray.books.map((data) => (
-          <div
-            key={data.id}
-            className=" container bg-[#e5e7eb] py-2 px-4 my-3 text-base border-solid border-2 border-gray-400"
-          >
-            <h1>Title: {data.title}</h1>
-            <h1>Isbn: {data.isbn}</h1>
-            <h2>SubTitle: {data.subTitle}</h2>
-            <h3>Author: {data.author}</h3>
-            <h4>Published_date: {data.publish_date}</h4>
-            <h3>Publisher: {data.publisher}</h3>
-            <h3>Date: {data.pages}</h3>
-            <p>Description: {data.description}</p>
-            <p>Website: {data.website}</p>
-          </div>
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 
