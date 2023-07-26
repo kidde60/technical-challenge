@@ -35,13 +35,13 @@ const BookCard = () => {
   return (
     <>
       <Navbar />
-      <div className="mx-8">
-        <div className="cardcontainer">
-          <h1>BOOK LIST</h1>
+      <div className="flex flex-col items-center my-8">
+        <div className="w-full flex justify-around items-center">
+          <h1 className="app-color-primary  text-3xl font-bold">BOOK LIST</h1>
           <Link to={"/book"} className="text-blue-600">
             <button
               type="button"
-              className="button bg-[#61affe] px-4 py-2 rounded-full max-w-max"
+              className="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600"
             >
               Add Book
             </button>
